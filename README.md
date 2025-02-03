@@ -1,4 +1,13 @@
 Svitlana159852
+### Krótki opis aplikacji
+
+Niewielka aplikacja webowa do przechowania własnych notatek (dalej: postów) **bez dostępu do postów innych użytkowników**.
+
+1. Dostępny jest widok rejestracji konta oraz logowania.
+2. Po zalogowaniu użytkownik zostaje przekierowany na panel główny, na którym może tworzyć oraz przegłądać własne posty.
+3. Na tym widoku dostępna jest również opcja wyszukania konkretnego posta.
+4. W nawigacji są opcje do przekierowania się na widok przegłądania plików. Na tym widoku dostępne są opcje wyszukania pliku oraz przejrzenia jego zawartości.
+5. W nawigacji znajduje się opcja wylogowania się.
 
 # Użyte Algorytmy Szyfrowania
 
@@ -27,6 +36,17 @@ $query = "SELECT posts.*, users.username FROM posts
 ```
 
 Tutaj ```$user_id`` oraz ```$searchQuery``` są wstawiane bezpośrednio do zapytania SQL, co oznacza, że użytkownik może wstrzyknąć własny kod SQL.
+
+**Przykład ataku:**
+Logujemy się jako różni użytkownicy i wrzucamy posty z każdego konta, by się upewnić, że posty innego użytkownika są niedostępne.
+<img width="452" alt="image" src="https://github.com/user-attachments/assets/bc6d870f-776b-41ea-910c-a2d8329dd99e" />
+
+
+Przy zwykłym wyszukiwaniu też nie mamy do nich dostępu.
+<img width="452" alt="image" src="https://github.com/user-attachments/assets/b60f247e-00ff-4798-bbfa-09787a50e48e" />
+
+Ale jeśli sprobujemy użyć najbardziej standardowy przykład SQL Injection, to w tym przypadku z poziomu użytkownika 2 widzimy też posty innych użytkowników, np. 1.
+<img width="452" alt="image" src="https://github.com/user-attachments/assets/53ac2b03-c47a-427d-8166-5e98bc748180" />
 
 > Jak naprawić?
 Użycie przygotowanych zapytań (prepare i bindValue).
