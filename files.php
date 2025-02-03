@@ -17,12 +17,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['search'])) {
     $files = scandir($directory); 
 }
 
-// widok plikow
-$fileContent = '';
 if (isset($_GET['view']) && file_exists($directory . '/' . $_GET['view'])) {
-    $fileContent = exec('cat ' . $directory . '/' . $_GET['view']);
-}
+    $filePath = escapeshellarg($directory . '/' . $_GET['view']); 
 
+    $output = [];
+    exec("cat $filePath", $output);
+
+    $fileContent = implode("\n", $output);
+}
 ?>
 
 <!DOCTYPE html>
