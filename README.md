@@ -39,13 +39,16 @@ Tutaj ```$user_id`` oraz ```$searchQuery``` są wstawiane bezpośrednio do zapyt
 
 **Przykład ataku:**
 Logujemy się jako różni użytkownicy i wrzucamy posty z każdego konta, by się upewnić, że posty innego użytkownika są niedostępne.
+
 <img width="452" alt="image" src="https://github.com/user-attachments/assets/bc6d870f-776b-41ea-910c-a2d8329dd99e" />
 
 
 Przy zwykłym wyszukiwaniu też nie mamy do nich dostępu.
+
 <img width="452" alt="image" src="https://github.com/user-attachments/assets/b60f247e-00ff-4798-bbfa-09787a50e48e" />
 
 Ale jeśli sprobujemy użyć najbardziej standardowy przykład SQL Injection, to w tym przypadku z poziomu użytkownika 2 widzimy też posty innych użytkowników, np. 1.
+
 <img width="452" alt="image" src="https://github.com/user-attachments/assets/53ac2b03-c47a-427d-8166-5e98bc748180" />
 
 > Jak naprawić?
