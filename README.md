@@ -47,9 +47,12 @@ Przy zwykłym wyszukiwaniu też nie mamy do nich dostępu.
 
 <img width="452" alt="image" src="https://github.com/user-attachments/assets/b60f247e-00ff-4798-bbfa-09787a50e48e" />
 
+
 Ale jeśli sprobujemy użyć najbardziej standardowy przykład SQL Injection, to w tym przypadku z poziomu użytkownika 2 widzimy też posty innych użytkowników, np. 1.
 
 <img width="452" alt="image" src="https://github.com/user-attachments/assets/53ac2b03-c47a-427d-8166-5e98bc748180" />
+
+
 
 > Jak naprawić?
 Użycie przygotowanych zapytań (prepare i bindValue).
@@ -69,6 +72,17 @@ if (isset($_GET['view']) && file_exists($directory . '/' . $_GET['view'])) {
 ```
 
 Tutaj ```$_GET['view']``` nie jest sprawdzane pod kątem niebezpiecznych znaków (../), co umożliwia atakującemu odczytanie dowolnych plików systemowych.
+
+**Przykład ataku:**
+Widok wyszukiwania i przegłądania plików. Klikamy na dowolny plik który chcemy zobaczyć.
+
+<img width="452" alt="image" src="https://github.com/user-attachments/assets/ea465969-cf71-44f8-975c-e64fb2d36545" />
+
+
+Pliki przedstawione na widoku są plikami przeznaczonymi dla aplikacji, ale co jeśli da się dostać do plików na samym serwerze?
+W komponencie linku zamiast nazwy pliku wpisujemy ścieżkę ```../../../../../etc/passwd```
+<img width="452" alt="image" src="https://github.com/user-attachments/assets/12d2f377-59d9-4383-a93a-b1304638a6e5" />
+W tym przypadku dostaliśmy się do pliku */etc/passwd* na serwerze aplikacji.
 
 > Jak naprawić?
 Blokowanie znaków ../ w zmiennej ```$_GET['view'].```
