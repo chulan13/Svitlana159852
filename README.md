@@ -10,6 +10,7 @@ Niewielka aplikacja webowa do przechowania własnych notatek (dalej: postów) **
 4. W nawigacji są opcje do przekierowania się na widok przegłądania plików. Na tym widoku dostępne są opcje wyszukania pliku oraz przejrzenia jego zawartości.
 5. W nawigacji znajduje się opcja wylogowania się.
 
+> W tym repo są 2 branche: unsecure oraz secured. Pierwszy jest kodem podatnym, a drugi - zabezpieczonym.
 
 # Użyte Algorytmy Szyfrowania
 
