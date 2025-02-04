@@ -23,8 +23,9 @@ Niewielka aplikacja webowa do przechowania własnych notatek (dalej: postów) **
 
 ### 1. SQL Injection
 
-> Opis ataku:
+**Opis ataku:**
 SQL Injection polega na wstrzyknięciu niebezpiecznego kodu SQL do zapytań do bazy danych, co może prowadzić do kradzieży danych, usunięcia tabel lub przejęcia kontroli nad aplikacją.
+
 Miejsce podatne w kodzie:
 
 ```
@@ -53,14 +54,13 @@ Ale jeśli sprobujemy użyć najbardziej standardowy przykład SQL Injection, to
 <img width="452" alt="image" src="https://github.com/user-attachments/assets/53ac2b03-c47a-427d-8166-5e98bc748180" />
 
 
-
-> Jak naprawić?
+**Jak naprawić?**
 Użycie przygotowanych zapytań (prepare i bindValue).
 Unikanie interpolacji zmiennych w zapytaniach SQL.
 
 ### 2. Path Traversal
 
-> Opis ataku:
+**Opis ataku:**
 Path Traversal pozwala atakującemu uzyskać dostęp do plików poza przewidzianym katalogiem poprzez manipulację ścieżką pliku (../).
 Miejsce podatne w kodzie:
 
@@ -81,9 +81,11 @@ Widok wyszukiwania i przegłądania plików. Klikamy na dowolny plik który chce
 
 Pliki przedstawione na widoku są plikami przeznaczonymi dla aplikacji, ale co jeśli da się dostać do plików na samym serwerze?
 W komponencie linku zamiast nazwy pliku wpisujemy ścieżkę ```../../../../../etc/passwd```
+
 <img width="452" alt="image" src="https://github.com/user-attachments/assets/12d2f377-59d9-4383-a93a-b1304638a6e5" />
+
 W tym przypadku dostaliśmy się do pliku */etc/passwd* na serwerze aplikacji.
 
-> Jak naprawić?
+**Jak naprawić?**
 Blokowanie znaków ../ w zmiennej ```$_GET['view'].```
 Użycie realpath(), aby sprawdzić, czy ścieżka faktycznie wskazuje na plik w dozwolonym katalogu.
