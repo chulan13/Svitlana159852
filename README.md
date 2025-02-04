@@ -1,4 +1,7 @@
 Svitlana159852
+
+[Krótki opis aplikacji](#krotki-opis-aplikacji)
+
 ### Krótki opis aplikacji
 
 Niewielka aplikacja webowa do przechowania własnych notatek (dalej: postów) **bez dostępu do postów innych użytkowników**.
