@@ -82,7 +82,7 @@ Widok wyszukiwania i przegłądania plików. Klikamy na dowolny plik który chce
 Pliki przedstawione na widoku są plikami przeznaczonymi dla aplikacji, ale co jeśli da się dostać do plików na samym serwerze?
 W komponencie linku zamiast nazwy pliku wpisujemy ścieżkę ```../../../../../etc/passwd```
 
-<img width="452" alt="image" src="https://github.com/user-attachments/assets/12d2f377-59d9-4383-a93a-b1304638a6e5" />
+<img width="452" alt="image" src="https://github.com/user-attachments/assets/0177aab1-e654-46ad-bcc3-915b65e229cd" />
 
 W tym przypadku dostaliśmy się do pliku */etc/passwd* na serwerze aplikacji.
 
